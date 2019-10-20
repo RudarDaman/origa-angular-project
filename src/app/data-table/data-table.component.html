@@ -1,0 +1,56 @@
+<div class="mb-2 table-responsive mat-elevation-z8">
+
+    <table [class.isMobile]="isMobile" [dataSource]="usersData" mat-table>
+
+        <ng-container matColumnDef="sno">
+            <th *matHeaderCellDef mat-header-cell>S No</th>
+            <td *matCellDef="let element; let no = index" mat-cell>
+                <div class="mobile-label">S No </div>
+                {{ no + 1 }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th *matHeaderCellDef mat-header-cell> Name</th>
+            <td *matCellDef="let element" mat-cell>
+                <div class="mobile-label">Name </div>
+                <div>{{element.name}}</div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="username">
+            <th *matHeaderCellDef mat-header-cell> Username</th>
+            <td *matCellDef="let element" mat-cell>
+                <div class="mobile-label">Username </div>
+                <div>{{element.userName}}</div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+            <th *matHeaderCellDef mat-header-cell> City</th>
+            <td *matCellDef="let element" mat-cell>
+                <div class="mobile-label">City </div>
+                <div>{{element.city}}</div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pincode">
+            <th *matHeaderCellDef mat-header-cell> Pincode</th>
+            <td *matCellDef="let element" mat-cell>
+                <div class="mobile-label">Pincode </div>
+                <div>{{element.pincode}}</div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="company-name">
+            <th *matHeaderCellDef mat-header-cell> Company Name</th>
+            <td *matCellDef="let element" mat-cell>
+                <div class="mobile-label">Company Name </div>
+                <div>{{element.companyName}}</div>
+            </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+.border-box {
+    border: 1px solid black;
+}
+
+.right-section {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
